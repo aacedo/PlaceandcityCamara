@@ -61,6 +61,15 @@
                 <p>
                     <span langkey="index3">A sua contribuição apoia os processos participativos da cidade de Lisboa.</span>
                 </p>
+                <form style="margin-top: 30px; width: 60%; margin-right: auto; margin-left: auto; margin-bottom: 30px">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Email</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    </div>
+                </form>
+                <p>
+                    <span langkey="NOU TEXT">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mauris magna, vulputate ac sem sit amet, aliquet semper lacus. Nunc pretium rhoncus neque, ac porta velit dictum et. In dignissim ligula non sodales commodo. Sed augue eros, maximus quis odio eu, ullamcorper cursus dui.</span>
+                </p>
                 <p style="text-align: center; margin-top: 30px; font-weight: bold" langkey="index4">
                     Reside em Lisboa?
                 </p>
@@ -275,10 +284,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <p style="text-align: center; margin-top: 40px; font-weight: bold" langkey="index13">
-                  Há quanto tempo reside aí?
-                </p>
-                <div style="text-align: center">
+                <!-- <div style="text-align: center">
                   <label class="radio-inline">
                     <input type="radio" name="howlong" value="1" checked="checked"> <span langkey="index14"> Menos de 1 ano</span>
                   </label>
@@ -291,7 +297,7 @@
                   <label class="radio-inline">
                     <input type="radio" name="howlong" value="4"> <span langkey="index17"> Mais do que 6 anos </span>
                   </label>
-                </div>
+                </div> -->
                 <p style="text-align: center; margin-top: 40px; font-weight: bold" langkey="index18"> Indique por favor o código postal da sua residência
                 </p>
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-xs-offset-3">
@@ -303,6 +309,101 @@
                     <input type="checkbox" name="no_zip" value="1">
                     <span langkey="index19"> Se não desejar indicar o seu código postal, selecione por favor na caixa</span>
                   </label>
+                </div>
+                <div class="no-float"></div>
+                <p style="text-align: center; margin-top: 40px; font-weight: bold" langkey="index13">
+                  Há quanto tempo reside aí?
+                </p>
+                <!-- <div style="text-align: center">
+                  <label class="radio-inline">
+                    <input type="radio" name="howlong" value="1" checked="checked"> <span langkey=""> Before 2010</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="howlong" value="2"> <span langkey=""> 2011</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="howlong" value="3"> <span langkey=""> 2012</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="howlong" value="4"> <span langkey=""> 2013</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="howlong" value="5"> <span langkey=""> 2014</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="howlong" value="6"> <span langkey=""> 2015</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="howlong" value="7"> <span langkey=""> 2016</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="howlong" value="8"> <span langkey=""> 2017</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="howlong" value="9"> <span langkey=""> 2018</span>
+                  </label>
+                </div> -->
+                <div class="dropdown" style="margin: 0 auto; width: 72px">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" langkey="NOU ANY">
+                        Year
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="">
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="1" checked="checked"> 
+                                <span langkey=""> Before 2010</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="2"> 
+                                <span langkey=""> 2011</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="3"> 
+                                <span langkey=""> 2012</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="4"> 
+                                <span langkey=""> 2013</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="5"> 
+                                <span langkey=""> 2014</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="6"> 
+                                <span langkey=""> 2015</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="7"> 
+                                <span langkey=""> 2016</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="8"> 
+                                <span langkey=""> 2017</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="9"> 
+                                <span langkey=""> 2018</span>
+                            </label>
+                        </li>
+                    </ul>
                 </div>
             </div> <!--/.modal-body -->
             <div class="no-float"></div>
@@ -349,7 +450,7 @@
                     <p style="text-align: center; margin-top: 40px; font-weight: bold" langkey="index13">
                         Há quanto tempo reside aí?
                     </p>
-                    <div style="text-align: center">
+                    <!-- <div style="text-align: center">
                         <label class="radio-inline">
                             <input type="radio" name="howlong_no" value="1" checked="checked"> <span langkey="index14"> Menos de 1 ano</span>
                         </label>
@@ -362,6 +463,97 @@
                         <label class="radio-inline">
                             <input type="radio" name="howlong_no" value="4"> <span langkey="index17"> Mais do que 6 anos </span>
                         </label>
+                    </div> -->
+                    <!-- <div style="text-align: center">
+                      <label class="radio-inline">
+                        <input type="radio" name="howlong" value="1" checked="checked"> <span langkey=""> Before 2010</span>
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="howlong" value="2"> <span langkey=""> 2011</span>
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="howlong" value="3"> <span langkey=""> 2012</span>
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="howlong" value="4"> <span langkey=""> 2013</span>
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="howlong" value="5"> <span langkey=""> 2014</span>
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="howlong" value="6"> <span langkey=""> 2015</span>
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="howlong" value="7"> <span langkey=""> 2016</span>
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="howlong" value="8"> <span langkey=""> 2017</span>
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="howlong" value="9"> <span langkey=""> 2018</span>
+                      </label>
+                    </div> -->
+                    <div class="dropdown" style="margin: 0 auto; width: 72px">
+                      <button class="btn btn-default dropdown-toggle" type="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Year
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="">
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="1" checked="checked"> 
+                                <span langkey="NOU ANY"> Before 2010</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="2"> 
+                                <span langkey=""> 2011</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="3"> 
+                                <span langkey=""> 2012</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="4"> 
+                                <span langkey=""> 2013</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="5"> 
+                                <span langkey=""> 2014</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="6"> 
+                                <span langkey=""> 2015</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="7"> 
+                                <span langkey=""> 2016</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="8"> 
+                                <span langkey=""> 2017</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radio-inline" style="margin-left: 20px;">
+                                <input type="radio" name="howlong" value="9"> 
+                                <span langkey=""> 2018</span>
+                            </label>
+                        </li>
+                      </ul>
                     </div>
                     <div class="no-float"></div>
                 </div>
