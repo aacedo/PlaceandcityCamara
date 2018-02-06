@@ -163,8 +163,10 @@ function startall() {
             }
         }
         else{
+			var experiment = getParameterByName('exp');
             var data = {
-                home: false
+                home: false,
+				experiment: experiment
             };
             app.setHome(data, function (response) {
                 if (response === false) {

@@ -804,12 +804,20 @@
 <script src="js/API/coreapi.js"></script>
 <script src="js/API/app.js"></script d >-->
 
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
 
 <script>
 
     $(document).ready(function () {
 
-
+		firebase.initializeApp({
+			apiKey: "AIzaSyAs5FINj6C26JFANk1dCqrqz8HWByr4cOM",
+			authDomain: "towin-158e4.firebaseapp.com",
+			projectId: "towin-158e4"
+		});
+		db = firebase.firestore();
+		
         startall();
 
     });
