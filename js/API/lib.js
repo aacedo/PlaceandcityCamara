@@ -282,37 +282,39 @@ var translator = {
 
 appHelper = {
 	collection : "mainCollection",
-	emptyGeoJson : {
-		type: "FeatureCollection",
-		features: []
+	getEmptyGeoJson: function(){
+		return {
+			type: "FeatureCollection",
+			features: []
+		};
 	},
 	obtainCE: function (doc) {
-		var geoJson = appHelper.emptyGeoJson;
+		var geoJson = appHelper.getEmptyGeoJson();
 		var areas = doc.CE.areas;
 		for (var i = 0; i < areas.length; i++) {
 			var other = JSON.parse(areas[i].layer);
-			geoJson.features.push(other);
+			geoJson.features = geoJson.features.concat(other.features);
 		}
 		return geoJson;
 	},
 	obtainSC: function (doc) {
-		var geoJson = appHelper.emptyGeoJson;
+		var geoJson = appHelper.getEmptyGeoJson();
 		var groups = doc.SC.groups;
 		for (var j = 0; j < groups.length; j++) {
 			var areas = groups[j].areas;
 			for (var i = 0; i < areas.length; i++) {
 				var other = JSON.parse(areas[i].layer);
-				geoJson.features.push(other);
+				geoJson.features = geoJson.features.concat(other.features);
 			}
 		}
 		return geoJson;
 	},
 	obtainSOP: function (doc) {
-		var geoJson = appHelper.emptyGeoJson;
+		var geoJson = appHelper.getEmptyGeoJson();
 		var areas = doc.SOP.areas;
 		for (var i = 0; i < areas.length; i++) {
 			var other = JSON.parse(areas[i].layer);
-			geoJson.features.push(other);
+			geoJson.features = geoJson.features.concat(other.features);
 		}
 		return geoJson;
 	}
@@ -451,39 +453,39 @@ app = {
 				});
     },
     getSOPA: function (callback) {
-			var geoJson = appHelper.emptyGeoJson;
+			var geoJson = appHelper.getEmptyGeoJson();
 			db.collection(appHelper.collection).get().then(function(docs) {
 				docs.forEach(function(doc) {
 					var data = doc.data();
 					if (data.SOP){
 						var singled = appHelper.obtainSOP(data);
-						geoJson.features.push(singled.features);
+						geoJson.features = geoJson.features.concat(singled.features);
 					}
 				});
 				callback({geoJson:geoJson, id:id});
 			});
     },
     getSCA: function (callback) {
-			var geoJson = appHelper.emptyGeoJson;
+			var geoJson = appHelper.getEmptyGeoJson();
 			db.collection(appHelper.collection).get().then(function(docs) {
 				docs.forEach(function(doc) {
 					var data = doc.data();
 					if (data.SC){
 						var singled = appHelper.obtainSC(data);
-						geoJson.features.push(singled.features);
+						geoJson.features = geoJson.features.concat(singled.features);
 					}
 				});
 				callback({geoJson:geoJson, id:id});
 			});
     },
     getCEA: function (callback) {
-			var geoJson = appHelper.emptyGeoJson;
+			var geoJson = appHelper.getEmptyGeoJson();
 			db.collection(appHelper.collection).get().then(function(docs) {
 				docs.forEach(function(doc) {
 					var data = doc.data();
 					if (data.CE){
 						var singled = appHelper.obtainCE(data);
-						geoJson.features.push(singled.features);
+						geoJson.features = geoJson.features.concat(singled.features);
 					}
 				});
 				callback({geoJson:geoJson, id:id});
