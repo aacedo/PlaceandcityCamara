@@ -124,16 +124,6 @@ function startall() {
         }
     });
 
-    $(function(){
-
-        $("#years").click(function(){
-
-            $(".btn:first-child").text($(this).text());
-            $(".btn:first-child").val($(this).text());
-
-        });
-
-    });
 
 
     $('#how_long').click(function () {
