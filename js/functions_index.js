@@ -1,5 +1,7 @@
 // JavaScript Document "index"
 
+var mail = "";
+
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
@@ -48,16 +50,40 @@ function startall() {
     // validate
 
 
+
+
     $('#home_button').click(function () {
 
+        var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+        var mail = $("#mail_user").val();
 
-        if ($('input[name=lisbon_home]:checked').val() == "true") {
-            $('#myModal10').modal({backdrop: 'static', keyboard: false});
+
+        if ((mail != "")){
+
+            if ((testEmail.test(mail))) {
+
+
+                if ($('input[name=lisbon_home]:checked').val() == "true") {
+                    $('#myModal10').modal({backdrop: 'static', keyboard: false});
+                }
+                else {
+                    $('#myModalA').modal({backdrop: 'static', keyboard: false});
+                }
+            }
+
+            else  {
+
+                alert(translator.getKeyLanguageValue("general3"));
+            }
         }
-        else {
-            $('#myModalA').modal({backdrop: 'static', keyboard: false});
+        else{
 
-
+            if ($('input[name=lisbon_home]:checked').val() == "true") {
+                $('#myModal10').modal({backdrop: 'static', keyboard: false});
+            }
+            else {
+                $('#myModalA').modal({backdrop: 'static', keyboard: false});
+            }
         }
 
 
@@ -140,6 +166,7 @@ function startall() {
                 var experiment = getParameterByName('exp');
 
                 var data = {
+                    mailUser: mail,
                     home: home,
                     portugal: portugal,
                     howlong: howlong,
@@ -165,6 +192,7 @@ function startall() {
         else{
 			var experiment = getParameterByName('exp');
             var data = {
+                mailUser: mail,
                 home: false,
 				experiment: experiment
             };
@@ -209,6 +237,7 @@ function startall() {
         });
         var experiment = getParameterByName('exp');
         var data = {
+            mailUser: mail,
             home: home,
             freguesia: freguesia,
             howlong: howlong,
