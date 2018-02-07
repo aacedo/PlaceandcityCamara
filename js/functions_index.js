@@ -126,13 +126,21 @@ function startall() {
 
 
 
+
+
     $('#how_long').click(function () {
         var zip = $('#zip').val();
 
         var zipRegex = /(^\d{4}-\d{3}$)/;
         if (!zipRegex.test(zip)) {
             if ($("input:checkbox[name='no_zip']").is(':checked')) {
-                $('#myModal12').modal({backdrop: 'static', keyboard: false});
+                if ($("#years").val() == "0") {
+
+                    alert(translator.getKeyLanguageValue("general8"));
+                }
+                else{
+                    $('#myModal12').modal({backdrop: 'static', keyboard: false});
+                }
             }
             else{
                 // alert("Please, write the zip code");
@@ -148,7 +156,14 @@ function startall() {
                 }
             }
             if(found){
-                $('#myModal12').modal({backdrop: 'static', keyboard: false});
+
+                if ($("#years").val() == "0") {
+
+                    alert(translator.getKeyLanguageValue("general8"));
+                }
+                else{
+                    $('#myModal12').modal({backdrop: 'static', keyboard: false});
+                }
             }
             else{
                 alert(translator.getKeyLanguageValue("general3"));
@@ -168,12 +183,19 @@ function startall() {
             if (!zipRegex.test(zip_no)) {
 
                 alert(translator.getKeyLanguageValue("general2"));
+
             }
+            else if ($("#yearsno").val() == "0") {
+
+                alert(translator.getKeyLanguageValue("general8"));
+
+            }
+
             else {
                 var mail = $("#mail_user").val();
                 var home = ($("input[name=lisbon_home]:checked").val()) === 'false';
                 var portugal = ($("input[name=portugal_home]:checked").val());
-                var howlong = parseInt($("input[name=howlong_no]:checked").val());
+                var howlong = $('#yearsno').val();
                 var zip = $("#zip_no").val();
                 var experiment = getParameterByName('exp');
 
@@ -243,7 +265,7 @@ function startall() {
         var mail = $("#mail_user").val();
         var home = ($("input[name=lisbon_home]:checked").val()) === 'true';
         var freguesia = parseInt($("input[name=freguesia]:checked").val());
-        var howlong = parseInt($("input[name=howlong]:checked").val());
+        var howlong = $('#years').val();
         var zip = $("#zip").val();
         var problem = [];
         $("input[name=problem]:checked").each(function () {
