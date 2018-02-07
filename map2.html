@@ -1073,12 +1073,12 @@
 			projectId: "towin-158e4"
 		});
 		db = firebase.firestore();
-			
+
         var savedStrData = util.getFromLocalStorage(util.interPageDataKey);
         id = savedStrData.id;
         mapCenter = savedStrData.center;
         if (!id) {
-            window.location.href = "index.html";
+             window.location.href = "index.html";
         }
         //startMapComponents();
         startAll();

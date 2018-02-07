@@ -29,6 +29,8 @@ function startall() {
         $('#myModal9').modal({backdrop: 'static', keyboard: false});
         $('#myModal10').modal('hide');
 
+
+
     });
 
     $('#how_long_pre').click(function () {
@@ -65,9 +67,13 @@ function startall() {
 
                 if ($('input[name=lisbon_home]:checked').val() == "true") {
                     $('#myModal10').modal({backdrop: 'static', keyboard: false});
+                    $("#myModal9").modal('hide');
+
                 }
                 else {
                     $('#myModalA').modal({backdrop: 'static', keyboard: false});
+                    $("#myModal9").modal('hide');
+
                 }
             }
 
@@ -80,9 +86,13 @@ function startall() {
 
             if ($('input[name=lisbon_home]:checked').val() == "true") {
                 $('#myModal10').modal({backdrop: 'static', keyboard: false});
+                $("#myModal9").modal('hide');
+
             }
             else {
                 $('#myModalA').modal({backdrop: 'static', keyboard: false});
+                $("#myModal9").modal('hide');
+
             }
         }
 
@@ -112,6 +122,17 @@ function startall() {
         else{
             $('#myModal11').modal({backdrop: 'static', keyboard: false});
         }
+    });
+
+    $(function(){
+
+        $("#years").click(function(){
+
+            $(".btn:first-child").text($(this).text());
+            $(".btn:first-child").val($(this).text());
+
+        });
+
     });
 
 
@@ -159,6 +180,7 @@ function startall() {
                 alert(translator.getKeyLanguageValue("general2"));
             }
             else {
+                var mail = $("#mail_user").val();
                 var home = ($("input[name=lisbon_home]:checked").val()) === 'false';
                 var portugal = ($("input[name=portugal_home]:checked").val());
                 var howlong = parseInt($("input[name=howlong_no]:checked").val());
@@ -190,7 +212,8 @@ function startall() {
             }
         }
         else{
-			var experiment = getParameterByName('exp');
+            var mail = $("#mail_user").val();
+            var experiment = getParameterByName('exp');
             var data = {
                 mailUser: mail,
                 home: false,
@@ -227,6 +250,7 @@ function startall() {
     // preapare data to send
 
     $('#done1').click(function () {
+        var mail = $("#mail_user").val();
         var home = ($("input[name=lisbon_home]:checked").val()) === 'true';
         var freguesia = parseInt($("input[name=freguesia]:checked").val());
         var howlong = parseInt($("input[name=howlong]:checked").val());
