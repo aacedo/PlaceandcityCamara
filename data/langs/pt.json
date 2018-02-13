@@ -1,10 +1,11 @@
 {
-  "index1": "Este questionário é parte integrante de um projeto de investigação da Nova Information Management School (NOVA IMS) da Universidade Nova de Lisboa. O objetivo principal é perceber a forma como a perceção do local e as relações sociais do cidadão influenciam a sua participação numa dada área urbana.",
-  "index2": "O preenchimento do questionário demora cerca de 5 minutos e a atividade de mapeamento cerca de 10 minutos, dependendo do número de áreas que se pretenderem assinalar.",
+  "index1": "Em primeiro lugar, queremos reconhecer a sua participação nesses quase já dez anos de encontros descentralizados em Lisboa. Agora, o convidamos a fazer uma rápida pesquisa. O objetivo principal é perceber a forma como a perceção do local e as relações sociais do cidadão influenciam a sua participação numa dada área urbana.",
+  "index2": "Este questionário é parte integrante de um projeto de investigação da Nova Information Management School (NOVA IMS) da Universidade Nova de Lisboa. O preenchimento do questionário demora cerca de 5 minutos e a atividade de mapeamento cerca de 10 minutos, dependendo do número de áreas que se pretenderem assinalar.",
   "index2a": "Às submissões",
   "index2b": " nº 200, nº 500 e nº 1000 será oferecido um cartão oferta no montante de 50,00€. Para se habilitar a esta oferta tem de fornecer o seu email no campo disponível no final do inquérito.",
-  "index3": "A sua contribuição apoia os processos participativos da cidade de Lisboa.",
-  "index3a": "Por favor, responda ao inquérito ",
+  "index3": "Às submissões nº 10 nº 50 nº 100 nº 200, nº 500 e nº 1000 será oferecido um cartão oferta no montante de 50,00€. Se deseja concorrer a um prêmio, deve indicar o seu e-mail na próxima caixa de texto, o contactaremos em caso de que seja o ganhador.",
+  "index3a": "Recomendamos que faça a pesquisa num computador portátil ou num computador de secretária, já que algumas funções funcionam melhor que em smartphones ou outros dispositivos similares.",
+  "index3lm": "Com a sua contribuição, apoiará a melhoria dos processos de participação no município de Lisboa.",
   "index3b": "num computador portátil  ou num computador de secretária ",
   "index3c": ", dado que algumas funções não funcionam bem em telemóveis e outros dispositivos semelhantes",
   "index4": "Reside em Lisboa?",
@@ -53,6 +54,8 @@
   "index45": "Transporte Público",
   "index46": "Turismo",
   "index47": "Outros",
+  "index48": "Se respondeu esta pesquisa em junho passado, responda sim na próxima opção e, por favor, escreva o seu e-mail para que seja considerado e envie a sua resposta utilizando o botão Próximo.",
+
 
 
 
@@ -267,7 +270,7 @@
 
 
   "global1":"Agradecemos a sua participação",
-  "global2":"Vamos criar áreas que o vão ligar com outras pessoas que partilham os seus locais e os seus grupos. Se estiver interessado em saber os resultados do estudo, conhecer as áreas escolhidas por outras pessoas e participar nos cartãos oferta, indique-nos por favor o seu email e/ou a sua conta de twitter. Juntos, vamos melhorar a participação em Lisboa!",
+  "global2":"Vamos criar áreas que o vão ligar com outras pessoas que partilham os seus locais e os seus grupos. Juntos, vamos melhorar a participação em Lisboa!",
   "global3":"Conta de Twitter",
   "global4":"Enviar",
   "global5":"Tweetar",

@@ -31,54 +31,61 @@
         <div class="modal-content">
             <div class="modal-body">
                 <!--  Language -->
-                <p>
-                    <input type="radio" name="language" value="en" checked>
-                    <img src="img/flags/24/United Kingdom(Great Britain).png" style="margin-left: 5px">
-                    <br>
-                    <input type="radio" name="language" value="pt">
-                    <img src="img/flags/24/Portugal.png" style="margin-left: 5px">
-                    <br>
-                    <input type="radio" name="language" value="es">
-                    <img src="img/flags/24/Spain.png" style="margin-left: 5px">
-                    <br>
-                </p>
+                <div class="show" id="languages">
+                    <p>
+                        <input type="radio" name="language" value="en" checked>
+                        <img src="img/flags/24/United Kingdom(Great Britain).png" style="margin-left: 5px">
+                        <br>
+                        <input type="radio" name="language" value="pt">
+                        <img src="img/flags/24/Portugal.png" style="margin-left: 5px">
+                        <br>
+                        <input type="radio" name="language" value="es">
+                        <img src="img/flags/24/Spain.png" style="margin-left: 5px">
+                        <br>
+                    </p>
+                </div>
                 <div id="mipruebaborrar" style="color:#0000FF"></div>
 
                 <!--  they have already done the project  -->
-                <div class="alert alert-danger" role="alert" style="margin-top: 40px; margin-bottom: 30px">
+                <div class="alert alert-danger" id="rojo" class="show" role="alert" style="margin-top: 40px; margin-bottom: 30px">
                     <p>
-                        <span langkey="NOU TEXT">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat porttitor quam, et interdum orci vehicula placerat. Proin fermentum vel urna eu convallis. Maecenas eget aliquet nunc, sed laoreet felis. Maecenas suscipit dui vel tortor lobortis, feugiat fermentum dolor euismod. Nam gravida dictum elit et efficitur.</span>
+                        <span langkey="index48">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat porttitor quam, et interdum orci vehicula placerat. Proin fermentum vel urna eu convallis. Maecenas eget aliquet nunc, sed laoreet felis. Maecenas suscipit dui vel tortor lobortis, feugiat fermentum dolor euismod. Nam gravida dictum elit et efficitur.</span>
                     </p>
                     <div style="text-align: center; margin-top: 20px">
                         <label class="radio-inline">
-                            <input type="radio" name="before-done" value="true"> <span langkey="index5"> Si </span>
+                            <input type="radio" name="before_done" value="true"> <span langkey="index5"> Si </span>
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="before-done"  value="false" checked="checked"> <span langkey="index6"> No</span>
+                            <input type="radio" name="before_done" value="false" checked="checked"> <span langkey="index6"> No</span>
                         </label>
                     </div>
                 </div>
 
 
                 <!--  Project's explanation  -->
-                <p>
-                    <span langkey="index1">Este questionário é parte integrante de um projeto de investigação da Nova Information Management School (NOVA IMS) da Universidade Nova de Lisboa. O objetivo principal é perceber a forma como a perceção do local e as relações sociais do cidadão influenciam a sua participação numa dada área urbana.</span>
-                </p>
-                <p>
-                    <span langkey="index2">O preenchimento do questionário demora cerca de 5 minutos e a atividade de mapeamento cerca de 15 minutos, dependendo do número de áreas que se pretenderem assinalar.</span>
-                </p>
-                <p>
-                    <b langkey="index3a"></b>
-                </p>
-                <p>
-                    <span langkey="index3">A sua contribuição apoia os processos participativos da cidade de Lisboa.</span>
-                </p>
-                <form style="margin-top: 30px; width: 60%; margin-right: auto; margin-left: auto; margin-bottom: 30px">
-                    <div class="form-group">
-                        <label for="mail_user">Email</label>
-                        <input type="email" class="form-control" id="mail_user" placeholder="name@example.com">
-                    </div>
-                </form>
+                <div class="show" id="info1">
+                    <p>
+                        <span langkey="index1">Este questionário é parte integrante de um projeto de investigação da Nova Information Management School (NOVA IMS) da Universidade Nova de Lisboa. O objetivo principal é perceber a forma como a perceção do local e as relações sociais do cidadão influenciam a sua participação numa dada área urbana.</span>
+                    </p>
+                    <p>
+                        <span langkey="index2">O preenchimento do questionário demora cerca de 5 minutos e a atividade de mapeamento cerca de 15 minutos, dependendo do número de áreas que se pretenderem assinalar.</span>
+                    </p>
+                    <p>
+                        <b langkey="index3a"></b>
+                    </p>
+                    <p>
+                        <span langkey="index3">A sua contribuição apoia os processos participativos da cidade de Lisboa.</span>
+                    </p>
+                </div>
+                <div class="show" id="mail">
+                    <form style="margin-top: 30px; width: 60%; margin-right: auto; margin-left: auto; margin-bottom: 30px">
+                        <div class="form-group">
+                            <label for="mail_user">Email</label>
+                            <input type="email" class="form-control" id="mail_user" placeholder="name@example.com">
+                        </div>
+                    </form>
+                </div>
+                <div class="show" id="info2">
                 <p>
                     <span langkey="index3lm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mauris magna, vulputate ac sem sit amet, aliquet semper lacus. Nunc pretium rhoncus neque, ac porta velit dictum et. In dignissim ligula non sodales commodo. Sed augue eros, maximus quis odio eu, ullamcorper cursus dui.</span>
                 </p>
@@ -93,21 +100,29 @@
                         <input type="radio" name="lisbon_home"  value="false"> <span langkey="index6"> Não</span>
                     </label>
                 </div>
-                <p style="font-size: 12px">
-                    <span langkey="index7 "> Notas:</span>
-                    <br>
-                    <span langkey="index8">1.Todos os dados recolhidos neste questionário serão tratados de forma anónima e confidencial e não serão utilizados para fins comerciais ou cedidos a terceiros.</span>
-                    <br>
-                    <span langkey="index8a">2. Se pretender esclarecer alguma dúvida ou pedir alguma informação sobre este estudo, queira por favor contactar-nos através do seguinte endereço de email: acedo@novaims.unl.pt (Albert Acedo Sánchez) ou visite o nosso <a class="link-secondary" href="http://www.engagingeographies.com/blog">blog</a>.</span>
-                    <br>
-                </p>
+                </div>
+
+                <div class="hidden" id="thanks" style="text-align: center; margin: 30px">
+                    <p langkey="general13" style="font-weight: bold; font-size: 24px">kjj dskhjkhsd sjdkshda askjdjsd jkshjkd</p>
+                </div>
+
+                <div class="show" id="notas">
+                    <p style="font-size: 12px">
+                        <span langkey="index7 "> Notas:</span>
+                        <br>
+                        <span langkey="index8">1.Todos os dados recolhidos neste questionário serão tratados de forma anónima e confidencial e não serão utilizados para fins comerciais ou cedidos a terceiros.</span>
+                        <br>
+                        <span langkey="index8a">2. Se pretender esclarecer alguma dúvida ou pedir alguma informação sobre este estudo, queira por favor contactar-nos através do seguinte endereço de email: acedo@novaims.unl.pt (Albert Acedo Sánchez) ou visite o nosso <a class="link-secondary" href="http://www.engagingeographies.com/blog">blog</a>.</span>
+                        <br>
+                    </p>
+                </div>
             </div> <!--/.modal-body -->
             <div class="modal-footer" style="border:none;">
                 <div class="float-left" style="color: #A9A9A9; padding-top: 8px">
                     1/4
                 </div>
                 <div class="float-right">
-                    <button type="button" class="btn btn-primary btn-next" aria-label="Close" langkey="index9" id="home_button">Próximo
+                    <button type="button" class="btn btn-primary btn-next show" aria-label="Close" langkey="index9" id="home_button">Próximo
                     </button>
                 </div>
             </div>

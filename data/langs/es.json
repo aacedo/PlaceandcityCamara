@@ -1,10 +1,11 @@
 {
-  "index1": "Este cuestionario es parte de un proyecto de investigación de la universidad NOVA (Lisboa). El principal objetivo del estudio es comprender como las percepciones de los ciudadanos y sus relaciones sociales, influyen en la participación pública en un contexto urbano.",
-  "index2": "Responder el cuestionario se tarda menos de 5 minutos y la actividad de dibujo le lleva a la mayoría de la gente unos 10 minutos, dependiendo del número de áreas a definir.",
+  "index1": "Primero de todo os queremos agradecer vuestra participacion en estos ya casi diez años de reuniones descentralizadas en Lisboa. Ahora te invitamos a hacer este cuestionario. El principal objetivo del estudio es comprender como las percepciones de los ciudadanos y sus relaciones sociales, influyen en la participación pública en un contexto urbano.",
+  "index2": "Este cuestionario es parte de un proyecto de investigación de la universidad NOVA (Lisboa). Responder el cuestionario se tarda menos de 5 minutos y la actividad de dibujo le lleva a la mayoría de la gente unos 10 minutos, dependiendo del número de áreas a definir.",
   "index2a": "Las respuestas ",
   "index2b": " nº 200, nº 500 y nº 1000 serán premiadas con un vale regalo de 50,00€. Para poder disfrutar el vale debe darnos su mail en el campo disponible al final de la encuesta.",
-  "index3": "Con tu contribución, vamos a mejorar los procesos participativos de Lisboa.",
-  "index3a": "Por favor, haga el cuestionario en un ",
+  "index3": "Las respuestas nº 10 nº 50 nº 100 nº 200, nº 500 and nº 1000 serán premiadas con un vale regalo de 50,00€. Para poder disfrutar el vale debe darnos su mail en el campo disponible a continuacion para que podamos contactar en caso de que usted gane.",
+  "index3lm": "Con su contribucion usted apoyará la mejora de los procesos participativos en Lisboa.",
+  "index3a": "Recomendamos hacer el cuestionario en un ordenador portátil o de escritorio, ya que algunas funcionalidades se desarrollan mejor en estos que en smartphones y otros aparatos similares",
   "index3b": "ordenador portátil o de escritorio ",
   "index3c": "ya que algunas funcionalidades no se muestran correctamente en móviles o similares",
   "index4": "¿Vives en Lisboa?",
@@ -53,6 +54,11 @@
   "index45": "Transporte Público",
   "index46": "Turismo",
   "index47": "Otros",
+  "index48": "Si usted contestó este cuestionario el último junio, responda 'sí' a la siguiente opción y, por favor, escriba su email para poder tenerlo en cuenta y apriete el boton Next.",
+
+
+
+
 
 
   "map1-1":"Comenzar a dibujar",
@@ -259,7 +265,7 @@
 
 
   "global1":"Muchas gracias, apreciamos mucho tu esfuerzo",
-  "global2":"Vamos a crear áreas dinámicas para conectarte con gente que comparte tus lugares y grupos. En caso de estar interesado en saber más sobre el estudio, las áreas escogidas por otra gente y participar en los vales regalo, por favor danos tu email y/o el usuario de Twitter. ¡Juntos vamos a mejorar la participaciñon en Lisboa!",
+  "global2":"Vamos a crear áreas dinámicas para conectarte con gente que comparte tus lugares y grupos. ¡Juntos vamos a mejorar la participaciñon en Lisboa!",
   "global3":"Usuario Twitter",
   "global4":"Enviar",
   "global5":"Tweetear",

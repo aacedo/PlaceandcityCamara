@@ -52,18 +52,51 @@ function startall() {
     // validate
 
 
+    $("input[name='before_done']").change(function () {
+
+        if ($('input[name=before_done]:checked').val() == "false") {
+            $("#info1").removeClass().addClass("show");
+            $("#info2").removeClass().addClass("show");
+        }
+        else    {
+            $("#info1").removeClass().addClass("hidden");
+            $("#info2").removeClass().addClass("hidden");
+        }
+    });
+
 
 
     $('#home_button').click(function () {
 
         var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
         var mail = $("#mail_user").val();
+        var before = $('input[name=before_done]:checked').val();
+
+        if ($('input[name=before_done]:checked').val() == "false") {
+
+            if ((mail != "")){
+
+                if ((testEmail.test(mail))) {
 
 
-        if ((mail != "")){
+                    if ($('input[name=lisbon_home]:checked').val() == "true") {
+                        $('#myModal10').modal({backdrop: 'static', keyboard: false});
+                        $("#myModal9").modal('hide');
 
-            if ((testEmail.test(mail))) {
+                    }
+                    else {
+                        $('#myModalA').modal({backdrop: 'static', keyboard: false});
+                        $("#myModal9").modal('hide');
 
+                    }
+                }
+
+                else  {
+
+                    alert(translator.getKeyLanguageValue("general3"));
+                }
+            }
+            else{
 
                 if ($('input[name=lisbon_home]:checked').val() == "true") {
                     $('#myModal10').modal({backdrop: 'static', keyboard: false});
@@ -76,25 +109,53 @@ function startall() {
 
                 }
             }
-
-            else  {
-
-                alert(translator.getKeyLanguageValue("general3"));
-            }
         }
-        else{
 
-            if ($('input[name=lisbon_home]:checked').val() == "true") {
-                $('#myModal10').modal({backdrop: 'static', keyboard: false});
-                $("#myModal9").modal('hide');
+        else {
+
+            if ((mail != "")){
+
+                if ((testEmail.test(mail))) {
+
+                    var mail = $("#mail_user").val();
+                    var before = ($("input[name=before_done]:checked").val()) === 'true';
+                    var experiment = getParameterByName('exp');
+                    var data = {
+                        mailUser: mail,
+                        before: before,
+                        experiment: experiment
+                    };
+                    app.setHome(data, function (response) {
+                        if (response === false) {
+                            // alert("There is a connection problem; please, try again later");
+                            alert(translator.getKeyLanguageValue("general1"));
+                        }
+                        else {
+                            $("#rojo").removeClass().addClass("hidden");
+                            $("#mail").removeClass().addClass("hidden");
+                            $("#notas").removeClass().addClass("hidden");
+                            $("#home_button").removeClass().addClass("hidden");
+                            $("#languages").removeClass().addClass("hidden");
+                            $("#thanks").removeClass().addClass("show");
+
+
+                            alert(translator.getKeyLanguageValue("general13"));
+                        }
+                    });
+
+                }
+                else {
+                    alert(translator.getKeyLanguageValue("general3"));
+                }
 
             }
             else {
-                $('#myModalA').modal({backdrop: 'static', keyboard: false});
-                $("#myModal9").modal('hide');
+                alert(translator.getKeyLanguageValue("general3"));
 
             }
+
         }
+
 
 
     });
