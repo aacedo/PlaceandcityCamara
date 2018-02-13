@@ -911,19 +911,21 @@
 
             //startMapComponents();
 
-            $.ajax({
-                url: 'http://ip-api.com/json',
-                dataType: "json",
-                cache:true,
-                method:'GET',
-                success:function (response) {
-                    doIPCentering(response);
-                }.bind(this),
-                error:function (response) {
-                    doDefaultCentering();
-                    return false;
-                }.bind(this)
-            });
+            // $.ajax({
+            //     url: 'http://ip-api.com/json',
+            //     dataType: "json",
+            //     cache:true,
+            //     method:'GET',
+            //     success:function (response) {
+            //         doIPCentering(response);
+            //     }.bind(this),
+            //     error:function (response) {
+            //         doDefaultCentering();
+            //         return false;
+            //     }.bind(this)
+            // });
+
+					doDefaultCentering();
 
             function doDefaultCentering(){
                 mapCenter =[38.7500, -9.1500];
