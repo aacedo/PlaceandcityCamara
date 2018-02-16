@@ -137,6 +137,11 @@ function startAll() {
         $("#title_sliders_change").html(translator.getKeyLanguageValue("map1-20"));
         var replaced3 = $("#title_sliders_change").html().replace('hola', '<b style="font-size: 18px">' + tete + '</b>');
         $("#title_sliders_change").html(replaced3);
+        $("#textchange_reason").html(translator.getKeyLanguageValue("map2-58"));
+        var replaced4 = $("#textchange_reason").html().replace('hola', '<b style="font-size: 18px">' + tete + '</b>');
+        $("#textchange_reason").html(replaced4);
+
+
 
     };
 

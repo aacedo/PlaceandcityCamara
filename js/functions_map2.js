@@ -251,6 +251,16 @@ function startAll() {
             }
             else {
                 $("#SC_group").removeClass().addClass("show");
+                $("#other_name").removeClass().addClass("hidden");
+                $("#specifications").removeClass().addClass("hidden");
+
+
+
+
+
+
+
+
             }
         }
     });

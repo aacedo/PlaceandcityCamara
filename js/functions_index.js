@@ -118,7 +118,7 @@ function startall() {
                 if ((testEmail.test(mail))) {
 
                     var mail = $("#mail_user").val();
-                    var before = ($("input[name=before_done]:checked").val()) === 'true';
+                    var before = ($("input[name=before_done]:checked").val());
                     var experiment = getParameterByName('exp');
                     var data = {
                         mailUser: mail,
@@ -259,6 +259,8 @@ function startall() {
                 var howlong = $('#yearsno').val();
                 var zip = $("#zip_no").val();
                 var experiment = getParameterByName('exp');
+                var before = ($("input[name=before_done]:checked").val());
+
 
                 var data = {
                     mailUser: mail,
@@ -266,7 +268,8 @@ function startall() {
                     portugal: portugal,
                     howlong: howlong,
                     zip: zip,
-                    experiment: experiment
+                    experiment: experiment,
+                    before: before
                 };
                 app.setHome(data, function (response) {
                     if (response === false) {
@@ -287,10 +290,13 @@ function startall() {
         else{
             var mail = $("#mail_user").val();
             var experiment = getParameterByName('exp');
+            var before = ($("input[name=before_done]:checked").val());
+
             var data = {
                 mailUser: mail,
                 home: false,
-				experiment: experiment
+				experiment: experiment,
+                before: before
             };
             app.setHome(data, function (response) {
                 if (response === false) {
@@ -333,6 +339,7 @@ function startall() {
             problem.push(parseInt($(this).val()));
         });
         var experiment = getParameterByName('exp');
+        var before = ($("input[name=before_done]:checked").val());
         var data = {
             mailUser: mail,
             home: home,
@@ -340,7 +347,8 @@ function startall() {
             howlong: howlong,
             zip: zip,
             problem: problem,
-            experiment: experiment
+            experiment: experiment,
+            before:before
         };
         app.setHome(data, function (response) {
             if (response === false) {
