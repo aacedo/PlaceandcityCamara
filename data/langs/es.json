@@ -138,6 +138,13 @@
   "map1-100":"Añade otra palabra que defina otra área",
 
 
+  "map1-101":"Experiencia personal (memorias, significados, actitudes, etc.)",
+  "map1-102":"Socio-cultural (amigos, cultura, tiendas, aspectos religiosos, enseñanza, etc.)",
+  "map1-103":"Atributos físicos y características (medio ambiente, monumentos, etc.)",
+  "map1-104":"Usabilidad (deportes, acciones diarias, lugares de recreo, etc.)",
+  "map1-105":"Otros",
+
+
 
   "map2-1":"También nos gustaría preguntarte sobre los grupos de personas u organizaciones a los que perteneces. Éstos pueden ser formalmente organizados (religiosos, familiares, deportivos, trabajo...) o simplemente grupos de personas con las que haces actividades regularmente o hablas sobre temas.",
   "map2-2":"¿Puedes escribir (una o más) palabras que definan cada grupo? Por favor piensa en un grupo y escribe en la caja de texto abajo una o más palabras que definan el grupo, luego clica en “Añadir grupo”. Puedes añadir tantos grupos como quieras. Tómate tu tiempo. :)",
@@ -200,7 +207,8 @@
   "map2-55":"¿Has atendido alguna reunión del grupo Y en los últimos 12 meses?",
   "map2-56":"¿Con qué frecuencia has participado en las actividades del grupo Y en los últimos 12 meses?",
   "map2-57":"¿Con qué frecuencia has participado en las decisiones del grupo Y en los últimos 12 meses?",
-  "map2-58":"Please, select the most important reason that define this area hola",
+  "map2-58":"Por favor, seleccione la razón más importante para definir esta area hola",
+
 
 
 

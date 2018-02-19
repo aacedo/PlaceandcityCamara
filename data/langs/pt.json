@@ -129,8 +129,6 @@
   "map1-85":"* Pode abandonar a opção de desenho clicando e tecla “esc” no seu teclado.",
 
 
-
-
   "map1-95":"Por favor",
   "map1-96":"Pense numa palavra que defina uma destas áreas",
   "map1-97":"Escreva essa palavra no formulário abaixo",
@@ -139,6 +137,11 @@
   "map1-100":"Adicione mais uma palavra para definir outra área",
 
 
+  "map1-101":"Experiência Pessoal (recordações, significados, atitudes, etc.)",
+  "map1-102":"Socioculturais (amigos, cultura, lojas, questões religiosas, áreas de estudo, etc.)",
+  "map1-103":"Atributos e características físicas (meio ambiente, monumentos, etc.)",
+  "map1-104":"Usabilidade (desporto, atividades diárias, espaços de lazer, etc.)",
+  "map1-105":"Outro",
 
 
   "map2-1":"Gostaria também de lhe perguntar sobre grupos de pessoas ou organizações, redes ou associações a que pertença. Podem ser grupos formalmente organizados (grupos religiosos, de familiares, desportivos, de local de trabalho... ) or pura e simplesmente grupos de pessoas que se juntam regularmente para realizar uma atividade ou falar sobre vários assuntos.",
@@ -201,7 +204,7 @@
   "map2-55":"Nos últimos 12 meses participou nalguma reunião do grupo Y?",
   "map2-56":"Com que frequência participou nas atividades do grupo Y nos últimos 12 meses?",
   "map2-57":"Até que ponto participou no processo de decisão do grupo Y nos últimos 12 meses?",
-  "map2-58":"Please, select the most important reason that define this area hola",
+  "map2-58":"Por favor selecione a razão mais importante que define esta área hola",
 
 
 
