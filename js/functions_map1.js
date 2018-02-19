@@ -7,7 +7,8 @@ var number = 0;
 var name_places = [];
 var SOP = [];
 var current_name = [];
-var contador=0;
+var contador = 0;
+
 
 
 function startAll() {
@@ -48,23 +49,20 @@ function startAll() {
 
     //
 
-    $('#plus_name').click(function () { 
-        if (!$('#actual_place').val() && (name_places.length == 0)){ 
-            alert(translator.getKeyLanguageValue("general4")); 
-        } 
-        else if (!$('#actual_place').val() && (name_places.length > 0)) { 
-            $("#continuar").removeClass("hidden").addClass("show"); 
-        } 
-        else{ 
-            name_places.push($('#actual_place').val()); 
-            $('#actual_place').val(""); 
-            names(); 
-            contador=0; 
+    $('#plus_name').click(function () {
+        if (!$('#actual_place').val() && (name_places.length == 0)) {
+            alert(translator.getKeyLanguageValue("general4"));
         }
-      });
-
-
-
+        else if (!$('#actual_place').val() && (name_places.length > 0)) {
+            $("#continuar").removeClass("hidden").addClass("show");
+        }
+        else {
+            name_places.push($('#actual_place').val());
+            $('#actual_place').val("");
+            names();
+            contador = 0;
+        }
+    });
 
 
     function names() {
@@ -82,10 +80,10 @@ function startAll() {
     }
 
 
-    $( "#actual_place" ).keypress(function( event ) {
+    $("#actual_place").keypress(function (event) {
 
-        if (!$('#actual_place').val()){
-            if (contador==0){
+        if (!$('#actual_place').val()) {
+            if (contador == 0) {
                 $("#continuar").removeClass("show").addClass("hidden");
             }
             else {
@@ -96,7 +94,6 @@ function startAll() {
             $("#continuar").removeClass("show").addClass("hidden");
         }
     });
-
 
 
     $('#submit_name_places').click(function () {
@@ -142,16 +139,45 @@ function startAll() {
         $("#textchange_reason").html(replaced4);
 
 
+    }
 
-    };
+
+
+
 
     $('#sliders_done_button').click(function () {
 
+        var reasonvalue;
         var naturevalidation = $('[name=na1]:checked,[name=na2]:checked,[name=na3]:checked,[name=na4]:checked');
         if (naturevalidation.length < 4) {
             alert(translator.getKeyLanguageValue("general5"));
             return;
         }
+
+        if ($("#reason").val() == "5") {
+            if (!$("#other_reason").val()) {
+                // alert("Please, introduce the nature of the group.")
+                alert(translator.getKeyLanguageValue("general9"));
+                return;
+
+            }
+            else {
+                reasonvalue = $('#other_reason').val();
+
+            }
+        }
+
+        else if ($("#reason").val() == "0"){
+
+            alert(translator.getKeyLanguageValue("general9"));
+            return;
+        }
+        else {
+
+            reasonvalue = $('#reason').val();
+
+        }
+
 
         if (number == name_places.length - 1) {
 
@@ -161,6 +187,7 @@ function startAll() {
                 name: name_places[number],
                 layer: L.geoJson(drawnItems.toGeoJSON()),
                 livingIn: ($("input[name=live]:checked").val()) === 'true',
+                reason: reasonvalue,
                 predictors: {
                     na1: parseInt($("input[name=na1]:checked").val()),
                     na2: parseInt($("input[name=na2]:checked").val()),
@@ -241,6 +268,18 @@ function startAll() {
 
 
     });
+
+
+    $('#reason').change(function () {
+        if ($("#reason").val() == "5") {
+
+            $("#other_name_reason").removeClass().addClass("show");
+        }
+        else {
+            $("#other_name_reason").removeClass().addClass("hidden");
+        }
+    });
+
 
     //var AreaSelected;
     var group = new L.featureGroup();
@@ -367,7 +406,7 @@ function startAll() {
             else {
                 util.redirectToPage({
                     url: "map2.html",
-                    payload:  {id:response.id, center: mapCenter}
+                    payload: {id: response.id, center: mapCenter}
                 });
             }
         });
