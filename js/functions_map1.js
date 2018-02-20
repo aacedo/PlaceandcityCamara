@@ -157,7 +157,7 @@ function startAll() {
         if ($("#reason").val() == "5") {
             if (!$("#other_reason").val()) {
                 // alert("Please, introduce the nature of the group.")
-                alert(translator.getKeyLanguageValue("general9"));
+                alert(translator.getKeyLanguageValue("general22"));
                 return;
 
             }
@@ -169,7 +169,7 @@ function startAll() {
 
         else if ($("#reason").val() == "0"){
 
-            alert(translator.getKeyLanguageValue("general9"));
+            alert(translator.getKeyLanguageValue("general22"));
             return;
         }
         else {
@@ -209,6 +209,8 @@ function startAll() {
             $('#button-freguesia').prop('disabled', true);
             $('#button-freguesiaxs').prop('disabled', true);
 
+            $("#reason").val("0");
+
 
         }
 
@@ -230,6 +232,7 @@ function startAll() {
                 name: name_places[number],
                 layer: L.geoJson(drawnItems.toGeoJSON()),
                 livingIn: ($("input[name=live]:checked").val()) === 'true',
+                reason: reasonvalue,
                 predictors: {
                     na1: parseInt($("input[name=na1]:checked").val()),
                     na2: parseInt($("input[name=na2]:checked").val()),
@@ -263,6 +266,9 @@ function startAll() {
 
             buttonDelete.prop('disabled', true);
             buttonDraw.prop('disabled', false);
+
+            $("#reason").val("0");
+
 
         }
 
