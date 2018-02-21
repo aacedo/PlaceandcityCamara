@@ -269,6 +269,15 @@ function startAll() {
 
             $("#reason").val("0");
 
+            $("#other_name_reason").removeClass().addClass("hidden");
+
+            $("#other_name_reason").val("");
+
+            $("input[name=na1]").prop('checked', false);
+            $("input[name=na2]").prop('checked', false);
+            $("input[name=na3]").prop('checked', false);
+            $("input[name=na4]").prop('checked', false);
+
 
         }
 
