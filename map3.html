@@ -55,7 +55,7 @@
     </div>
   </div>
   <!-- ------------------------------- Map visible lg md sm  -------------------------------------------------------------- -->
-  <div id="pepe" class="col-lg-6 col-md-6 col-sm-6 visible-lg visible-md visible-sm hidden" style="position: fixed; right: 0px;">
+  <div id="pepe" class="col-lg-6 visible-lg hidden" style="position: fixed; right: 0px;">
     <div class="panel panel-default">
       <div class="panel-body">
         <div id="map" style="height:80vh; position: relative;">
@@ -115,7 +115,7 @@
   <!-- ------------------------------- End map ----------------------------------------------------------------------------- -->
 
   <!-- ------------------------------- Panel left -------------------------------------------------------------------------- -->
-  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
     <div class="panel panel-default">
       <div class="panel-body">
         <!-- -------------------- Draw areas ce first ------------------------- -->
@@ -343,7 +343,7 @@
   <!-- ------------------------------- End Panel left --------------------------------------------------------------------- -->
   
   <!-- ------------------------------- Map visible xs --------------------------------------------------------------------- -->
-<div class="visible-xs col-xs-12 hidden" id="pepa" style="padding: 0px; padding-top: 30px">
+<div class="visible-md visible-sm visible-xs col-md-12 col-sm-12 col-xs-12 hidden" id="pepa" style="padding: 0px; padding-top: 30px">
     <div class="panel panel-default">
         <div class="panel-body" style="position: relative;">
           <div style="position: absolute; top: -25px; left: -15px; z-index: 1000;">
@@ -545,11 +545,16 @@
 			db = firebase.firestore();
 		
             var savedStrData = util.getFromLocalStorage(util.interPageDataKey);
-            id = savedStrData.id;
-            mapCenter = savedStrData.center;
-            if (!id) {
-             window.location.href = "index.html";
-             }
+            if (savedStrData) {
+                id = savedStrData.id;
+                mapCenter = savedStrData.center;
+                if (!id) {
+                    window.location.href = "index.html";
+                }
+            }
+            else{
+                window.location.href = "index.html";
+            }
             //startMapComponents();
             startAll();
         });
@@ -575,7 +580,6 @@
             // Big Map
             var map1 = L.map('map', {
                 scrollWheelZoom: false,
-                dragging: false,
             });
             map1.on('load', function (e) {
                 if (isElementInViewport($('#map'))) {
@@ -585,10 +589,7 @@
             map1.setView(mapCenter, 12);
 
             // Small Map
-            var mapxs = L.map('map2', {
-                scrollWheelZoom: false,
-                dragging: false,
-            });
+            var mapxs = L.map('map2');
             mapxs.on('load', function (e) {
                 if (isElementInViewport($('#map2'))) {
                     createAll(mapxs, $("#draw_polyxs"), $("#delete_polyxs"));
