@@ -268,8 +268,8 @@ function startAll() {
     $('#bonding_bridging_done').click(function () {
 
 
-        var scvalidationbondingbridging = $('[name=bosc1]:checked,[name=bosc2]:checked,[name=brsc1]:checked,[name=brsc2]:checked');
-        if (scvalidationbondingbridging.length < 4) {
+        var scvalidationbondingbridging = $('[name=bosc1]:checked,[name=bosc2]:checked,[name=bosc3]:checked,[name=brsc1]:checked,[name=brsc2]:checked, [name=brsc3]:checked');
+        if (scvalidationbondingbridging.length < 6) {
             alert(translator.getKeyLanguageValue("general5"));
             return;
         }
@@ -293,15 +293,22 @@ function startAll() {
             socialCapital: {
                 bosc1: parseInt($("input[name=bosc1]:checked").val()),
                 bosc2: parseInt($("input[name=bosc2]:checked").val()),
+                bosc3: parseInt($("input[name=bosc3]:checked").val()),
+
                 brsc1: parseInt($("input[name=brsc1]:checked").val()),
-                brsc2: parseInt($("input[name=brsc2]:checked").val())
+                brsc2: parseInt($("input[name=brsc2]:checked").val()),
+                brsc3: parseInt($("input[name=brsc3]:checked").val()),
             }
         };
 
         $("input[name=bosc1]").prop('checked', false);
         $("input[name=bosc2]").prop('checked', false);
+        $("input[name=bosc3]").prop('checked', false);
+
         $("input[name=brsc1]").prop('checked', false);
         $("input[name=brsc2]").prop('checked', false);
+        $("input[name=brsc3]").prop('checked', false);
+
 
 
         currGroup.areas.push(polygonData);
@@ -726,8 +733,11 @@ function deleteareas() {
     }
     $("input[name=bosc1]").prop('checked', false);
     $("input[name=bosc2]").prop('checked', false);
+    $("input[name=bosc3]").prop('checked', false);
+
     $("input[name=brsc1]").prop('checked', false);
     $("input[name=brsc2]").prop('checked', false);
+    $("input[name=brsc3]").prop('checked', false);
 
 }
 
