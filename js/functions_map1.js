@@ -154,7 +154,7 @@ function startAll() {
             return;
         }
 
-        if ($("#reason").val() == "5") {
+        if ($("#reason").val() === "5") {
             if (!$("#other_reason").val()) {
                 // alert("Please, introduce the nature of the group.")
                 alert(translator.getKeyLanguageValue("general22"));
@@ -167,7 +167,7 @@ function startAll() {
             }
         }
 
-        else if ($("#reason").val() == "0"){
+        else if ($("#reason").val() === "0"){
 
             alert(translator.getKeyLanguageValue("general22"));
             return;
@@ -271,7 +271,7 @@ function startAll() {
 
             $("#other_name_reason").removeClass().addClass("hidden");
 
-            $("#other_name_reason").val("");
+            $("#other_reason").val("");
 
             $("input[name=na1]").prop('checked', false);
             $("input[name=na2]").prop('checked', false);
@@ -286,7 +286,7 @@ function startAll() {
 
 
     $('#reason').change(function () {
-        if ($("#reason").val() == "5") {
+        if ($("#reason").val() === "5") {
 
             $("#other_name_reason").removeClass().addClass("show");
         }
