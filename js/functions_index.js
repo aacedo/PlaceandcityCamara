@@ -93,7 +93,7 @@ function startall() {
 
                 else  {
 
-                    alert(translator.getKeyLanguageValue("general3"));
+                    alert(translator.getKeyLanguageValue("general3a"));
                 }
             }
             else{

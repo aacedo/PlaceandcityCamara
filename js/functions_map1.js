@@ -10,7 +10,6 @@ var current_name = [];
 var contador = 0;
 
 
-
 function startAll() {
 
 // POPOVER
@@ -138,12 +137,7 @@ function startAll() {
         var replaced4 = $("#textchange_reason").html().replace('hola', '<b style="font-size: 18px">' + tete + '</b>');
         $("#textchange_reason").html(replaced4);
 
-
-    }
-
-
-
-
+    };
 
     $('#sliders_done_button').click(function () {
 
@@ -167,7 +161,7 @@ function startAll() {
             }
         }
 
-        else if ($("#reason").val() === "0"){
+        else if ($("#reason").val() === "0") {
 
             alert(translator.getKeyLanguageValue("general22"));
             return;
@@ -197,23 +191,47 @@ function startAll() {
             };
 
             SOP.push(polygonData);
+
             map.removeLayer(drawnItems);
             drawnItems = new L.FeatureGroup();
-
-            ShowAllAreas();
-            $("#select_place").toggleClass("hidden show");
-            $("#sliders_done").toggleClass("hidden show");
 
             buttonDelete.prop('disabled', true);
             buttonDraw.prop('disabled', true);
             $('#button-freguesia').prop('disabled', true);
             $('#button-freguesiaxs').prop('disabled', true);
 
+
+
+
+            for (var i = 0; i < SOP.length; i++) {
+                SOP[i].layer = /*JSON.stringify(*/SOP[i].layer.toGeoJSON()/*)*/;
+            }
+
+            var data2 = {
+                type: "sop",
+                areas: SOP
+            };
+
+            app.setSOP(id, data2, function (response) {
+                if (response === false) {
+                    // alert("There is a connection problem; please, try again later");
+                    alert(translator.getKeyLanguageValue("general1"));
+                }
+                else {
+                    util.redirectToPage({
+                        url: "map2.html",
+                        payload: {id: response.id, center: mapCenter}
+                    });
+                }
+            });
+
+
             $("#reason").val("0");
-
-
+            $("input[name=na1]").prop('checked', false);
+            $("input[name=na2]").prop('checked', false);
+            $("input[name=na3]").prop('checked', false);
+            $("input[name=na4]").prop('checked', false);
         }
-
         else {
 
             map.setZoom(zoommap);
@@ -245,18 +263,6 @@ function startAll() {
             nameplace();
             $("#group_name_place").fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
 
-            /*
-
-             for (i = 1; i <= 7; i++) {
-             $('input[id=ex' + i + ']').slider('setValue', 0);
-             $('span[id=ex' + i + 'SliderVal]').text(0);
-             };
-             */
-            $("input[name=na1]").prop('checked', false);
-            $("input[name=na2]").prop('checked', false);
-            $("input[name=na3]").prop('checked', false);
-            $("input[name=na4]").prop('checked', false);
-
 
             SOP.push(polygonData);
             map.removeLayer(drawnItems);
@@ -273,17 +279,18 @@ function startAll() {
 
             $("#other_reason").val("");
 
+
+
             $("input[name=na1]").prop('checked', false);
             $("input[name=na2]").prop('checked', false);
             $("input[name=na3]").prop('checked', false);
             $("input[name=na4]").prop('checked', false);
 
 
+
         }
 
-
     });
-
 
     $('#reason').change(function () {
         if ($("#reason").val() === "5") {
@@ -293,140 +300,6 @@ function startAll() {
         else {
             $("#other_name_reason").removeClass().addClass("hidden");
         }
-    });
-
-
-    //var AreaSelected;
-    var group = new L.featureGroup();
-
-    var highlightedArea = null;
-
-
-    function ShowAllAreas() {
-
-        map.removeLayer(drawnItems);
-        //$(".finish-map").attr('disabled', true);
-        buttonDraw.prop('disabled', true);
-        buttonDelete.prop('disabled', true);
-        for (i = 0; i < SOP.length; i++) {
-            group.addLayer(SOP[i].layer);
-            map.addLayer(SOP[i].layer);
-            var sopi = SOP[i];
-            $('#radios').append('<div class="radio"><label><input type="radio" name="sc_areas" value="' + i + '"/>Area ' + SOP[i].name + '</label></div>');
-        }
-
-        $("input[name='sc_areas']").change(function () {
-            if (highlightedArea != null) {
-                highlightedArea.layer.setStyle({color: '#6000ff'});
-            }
-            var index = parseInt($("input[name=sc_areas]:checked").val());
-            highlightedArea = SOP[index];
-            highlightedArea.layer.setStyle({color: '#FF0000'});
-
-        });
-
-        map.fitBounds(group.getBounds(), null);
-
-
-        $('#choose_place').click(function () {
-
-            if ($('input[name=sc_areas]:checked').length) {
-                $("#select_place").toggleClass("hidden show");
-                $("#questions_done").toggleClass("hidden show");
-                buttonDraw.prop('disabled', true);
-                buttonDelete.prop('disabled', true);
-
-
-                for (var i = 0; i < SOP.length; i++) {
-                    map.removeLayer(SOP[i].layer);
-                }
-
-                var group = new L.featureGroup();
-
-                highlightedArea.layer.setStyle({color: '#FF0000'});
-                group.addLayer(highlightedArea.layer);
-                map.addLayer(highlightedArea.layer);
-
-                L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {}).addTo(map);
-                map.fitBounds(group.getBounds(), null);
-
-
-                var title = $("#change").html().replace('X', '<b style="font-size: 18px">' + highlightedArea.name + "</b>");
-                $("#change").html(title);
-                var pi1re = $("#pi1").html().replace('Y', "<b>" + highlightedArea.name + "</b>");
-                $("#pi1").html(pi1re);
-                var pi2re = $("#pi2").html().replace('Y', "<b>" + highlightedArea.name + "</b>");
-                $("#pi2").html(pi2re);
-                var pi3re = $("#pi3").html().replace('Y', "<b>" + highlightedArea.name + "</b>");
-                $("#pi3").html(pi3re);
-                var pa1re = $("#pa1").html().replace('Y', "<b>" + highlightedArea.name + "</b>");
-                $("#pa1").html(pa1re);
-                var pa2re = $("#pa2").html().replace('Y', "<b>" + highlightedArea.name + "</b>");
-                $("#pa2").html(pa2re);
-                var pa3re = $("#pa3").html().replace('Y', "<b>" + highlightedArea.name + "</b>");
-                $("#pa3").html(pa3re);
-                var pd1re = $("#pd1").html().replace('Y', "<b>" + highlightedArea.name + "</b>");
-                $("#pd1").html(pd1re);
-                var pd2re = $("#pd2").html().replace('Y', "<b>" + highlightedArea.name + "</b>");
-                $("#pd2").html(pd2re);
-                var pd3re = $("#pd3").html().replace('Y', "<b>" + highlightedArea.name + "</b>");
-                $("#pd3").html(pd3re);
-            }
-            else {
-                alert(translator.getKeyLanguageValue("general6"));
-            }
-        });
-
-    }
-
-    $('#questions-sop').click(function () {
-
-        // validate
-
-
-        var sopvalidation = $('[name=PI1]:checked,[name=PI2]:checked,[name=PI3]:checked,[name=PA1]:checked,[name=PA2]:checked,[name=PA3]:checked,[name=PD1]:checked,[name=PD2]:checked,[name=PD3]:checked');
-        if (sopvalidation.length < 9) {
-            alert(translator.getKeyLanguageValue("general5"));
-            return;
-        }
-
-        // finish validate
-
-        highlightedArea.dimensions = {
-            pi1: parseInt($("input[name=PI1]:checked").val()),
-            pi2: parseInt($("input[name=PI2]:checked").val()),
-            pi3: parseInt($("input[name=PI3]:checked").val()),
-            pa1: parseInt($("input[name=PA1]:checked").val()),
-            pa2: parseInt($("input[name=PA2]:checked").val()),
-            pa3: parseInt($("input[name=PA3]:checked").val()),
-            pd1: parseInt($("input[name=PD1]:checked").val()),
-            pd2: parseInt($("input[name=PD2]:checked").val()),
-            pd3: parseInt($("input[name=PD3]:checked").val())
-        }
-
-        for (var i = 0; i < SOP.length; i++) {
-            SOP[i].layer = /*JSON.stringify(*/SOP[i].layer.toGeoJSON()/*)*/;
-        }
-
-        var data2 = {
-            type: "sop",
-            areas: SOP
-        };
-
-        app.setSOP(id, data2, function (response) {
-            if (response === false) {
-                // alert("There is a connection problem; please, try again later");
-                alert(translator.getKeyLanguageValue("general1"));
-            }
-            else {
-                util.redirectToPage({
-                    url: "map2.html",
-                    payload: {id: response.id, center: mapCenter}
-                });
-            }
-        });
-
-
     });
 
 

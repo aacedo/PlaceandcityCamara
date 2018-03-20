@@ -296,6 +296,7 @@
   "general1":"There is a problem with the server; try again later.",
   "general2":"Please, write a correct zip-code",
   "general3":"This postal code doesn't belong to Lisbon city. Please, indicate your zip-code.",
+  "general3a":"Please insert a valid email.",
   "general4":"Please, write at least the name of one area.",
   "general5":"Please, answer all the questions",
   "general6":"Please, select one area.",
