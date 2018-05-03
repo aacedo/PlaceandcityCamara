@@ -266,7 +266,7 @@ function startall() {
                     mailUser: mail,
                     home: home,
                     portugal: portugal,
-                    howlong: howlong,
+                    //howlong: howlong,
                     zip: zip,
                     experiment: experiment,
                     before: before
